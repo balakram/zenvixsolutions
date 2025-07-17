@@ -77,7 +77,6 @@
 ## 📫 Contact
 
 - Email: info@zenvixsolutions.com
-- Phone: +91 9938443570
 - Location: Manecheswar, Bhubaneswar, Odisha-751017
 
 ## 🖼️ Credits & Graphics
