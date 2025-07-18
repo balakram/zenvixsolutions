@@ -518,7 +518,7 @@
         });
     </script>
 
-    <script>
+    <!--<script>
         document.querySelector('.contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
             this.style.display = 'none';
@@ -528,7 +528,32 @@
             }, 120);
         });
 
+    </script>-->
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            data.timestamp = new Date().toLocaleString();
+
+            // Get old records or initialize
+            const quotes = JSON.parse(localStorage.getItem('quotes')) || [];
+
+            // Push new one
+            quotes.push(data);
+
+            // Save back
+            localStorage.setItem('quotes', JSON.stringify(quotes));
+
+            this.style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('confirmationMessage').scrollIntoView({ behavior: 'smooth' });
+            }, 200);
+        });
     </script>
+
 
     <script src="script.js"></script>
     <script>
@@ -547,7 +572,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
-        <script>
+    <script>
 
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();

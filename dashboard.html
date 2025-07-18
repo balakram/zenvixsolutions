@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenvix Solutions - Professional Website Development & Management Services | Custom Web Solutions</title>
+  <meta name="description"
+    content="Zenvix Solutions provides professional website development, management, and custom web applications. Get stunning, responsive websites with SEO optimization that drive business growth and increase conversions.">
+  <meta name="keywords"
+    content="website development, web design, website management, custom web applications, responsive design, SEO optimization, e-commerce solutions, web development services, professional web design, mobile-first design, website maintenance">
+  <meta name="author" content="Balakram Tudu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="theme-color" content="#667eea">
+
+  <!-- Social & SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zenvixsolutions.com/">
+  <meta property="og:title" content="Zenvix Solutions - Professional Website Development Services">
+  <meta property="og:description"
+    content="Transform your business with professional web solutions. Custom websites, management, and development services that drive results.">
+  <meta property="og:image" content="https://zenvixsolutions.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://zenvixsolutions.com/">
+  <meta property="twitter:title" content="Zenvix Solutions - Professional Website Development">
+  <meta property="twitter:description"
+    content="Transform your business with professional web solutions. Custom websites, management, and development services.">
+  <meta property="twitter:image" content="https://zenvixsolutions.com/images/twitter-image.jpg">
+  <link rel="canonical" href="https://zenvixsolutions.com/">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Zenvix Solutions",
+      "url": "https://zenvixsolutions.com",
+      "logo": "https://zenvixsolutions.com/logo.png",
+      "description": "Professional website development and management services",
+      "founder": {
+        "@type": "Person",
+        "name": "Balakram Tudu",
+        "jobTitle": "Web Developer & Founder"
+      },
+      "services": [
+        "Website Development", 
+        "Web Design", 
+        "Website Management", 
+        "E-commerce Solutions", 
+        "SEO Optimization",
+        "Mobile-First Design",
+        "Custom Web Applications"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-555-123-4567",
+        "contactType": "customer service",
+        "email": "info@zenvixsolutions.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Business St",
+        "addressLocality": "City",
+        "addressRegion": "State",
+        "postalCode": "12345",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/zenvix-solutions",
+        "https://twitter.com/zenvixsolutions"
+      ]
+    }
+    </script>
+  <style>
+    .main-title {
+      text-align: center;
+      color: #5C50C1;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      font-size: 2.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .dashboard-actions {
+      display: flex;
+      justify-content: flex-end;
+      max-width: 825px;
+      margin: 0 auto 0.6rem auto;
+    }
+
+    .clear-btn {
+      background: linear-gradient(90deg, #f857a6, #ff5858 90%);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 0.6em 1.4em;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.18s, transform 0.1s;
+      box-shadow: 0 2px 12px rgba(248, 87, 166, 0.11);
+    }
+
+    .clear-btn:hover {
+      background: linear-gradient(90deg, #5C50C1 10%, #9874f7 90%);
+      transform: translateY(-2px) scale(1.08);
+    }
+
+    .quote-list {
+      max-width: 825px;
+      margin: 0 auto;
+    }
+
+    .empty-state {
+      background: #faf9fc;
+      border-radius: 20px;
+      padding: 2.2rem 0;
+      text-align: center;
+      font-size: 1.15rem;
+      color: #8886b8;
+      box-shadow: 0 2px 8px #e6e7f9;
+    }
+
+    .quote-card {
+      background: linear-gradient(120deg, #f8fafc 90%, #eceafe 100%);
+      border-left: 5px solid #837af7;
+      margin-bottom: 1.2rem;
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      box-shadow: 0 8px 28px rgba(92, 80, 193, 0.09), 0 1.5px 6px rgba(93, 84, 176, 0.08);
+      transition: box-shadow 0.15s;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp .7s cubic-bezier(.15, 1.11, .43, 1.15) backwards;
+    }
+
+    .quote-card:hover {
+      box-shadow: 0 10px 40px rgba(92, 80, 193, 0.19), 0 4px 18px rgba(80, 93, 176, 0.10);
+    }
+
+    .quote-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    /* Assignment Done State */
+    .quote-card.done {
+      filter: blur(1px) grayscale(0.4);
+      opacity: 0.55;
+      pointer-events: none;
+      position: relative;
+    }
+
+    .quote-card.done::after {
+      content: '✔ Assignment Complete';
+      position: absolute;
+      top: 14px;
+      right: 20px;
+      background: #5c50c1;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      animation: fadeIn 0.6s ease;
+      z-index: 2;
+    }
+
+    .done-btn {
+      margin-top: 1rem;
+      background: #5c50c1;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 18px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(92, 80, 193, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .done-btn:hover {
+      background: #4036a3;
+    }
+
+
+    .user-avatar {
+      background: linear-gradient(135deg, #5C50C1, #bb7bf3 90%);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      color: #fff;
+      display: flex;
+      font-weight: bold;
+      font-size: 1.7rem;
+      align-items: center;
+      justify-content: center;
+      margin-right: 18px;
+      box-shadow: 0 2px 10px #eaebff44;
+    }
+
+    .quote-header h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      color: #5C50C1;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+    }
+
+    .submitted-date {
+      margin: 0;
+      color: #5c50c1c6;
+      font-size: 0.95rem;
+      margin-top: 2px;
+    }
+
+    .quote-details p {
+      margin: 0.35em 0;
+      color: #373265;
+      font-size: 1.06rem;
+    }
+
+    .quote-details span {
+      color: #7268bd;
+      font-weight: 700;
+    }
+
+    .project-details {
+      background: #f1efff;
+      padding: 0.6em 1em;
+      border-radius: 7px;
+      margin-top: 12px;
+      font-size: 1.06rem;
+      line-height: 1.6;
+      box-shadow: 0 1px 5px #e2dbfd13;
+    }
+
+    .badge {
+      background: linear-gradient(90deg, #837af7, #bb7bf3 90%);
+      color: #fff;
+      padding: 0.15em 0.8em;
+      border-radius: 14px;
+      font-size: 1rem;
+      margin-left: 5px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0.5rem;
+      }
+
+      .main-title {
+        font-size: 1.35rem;
+      }
+
+      .quote-card {
+        padding: 1rem 0.7rem;
+        border-radius: 15px;
+        font-size: 0.96rem;
+      }
+
+      .user-avatar {
+        width: 34px;
+        height: 34px;
+        font-size: 1.15rem;
+        margin-right: 12px;
+      }
+
+      .dashboard-actions {
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo-combo logo">
+          <img src="assets/logo/logo7.png" alt="Zenvix Solutions Logo" style="height:48px; vertical-align:middle;">
+          <!--<span class="logo">Zenvix Solutions</span>-->
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <a href="quote.html" class="get-quote-btn">Get a Quote</a>
+        </ul>
+
+        <div id="mobile-menu" class="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <button id="close-nav" class="close-nav" style="display:none;">&times;</button>
+
+
+      </nav>
+    </header>
+    <section id="services" class="services">
+      <div class="container">
+        <h1 class="main-title"><span>📋</span> Quote Requests</h1>
+        <div class="dashboard-actions">
+          <button onclick="clearQuotes()" class="clear-btn">🗑 Clear All</button>
+        </div>
+        <div class="quote-list" id="quoteList"></div>
+      </div>
+    </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const quoteList = document.getElementById('quoteList');
+        const quotes = JSON.parse(localStorage.getItem('quotes')) || [];
+        if (quotes.length === 0) {
+          quoteList.innerHTML = `<div class="empty-state"><p>No quote requests found.</p></div>`;
+          return;
+        }
+        quotes.reverse().forEach(quote => {
+          const card = document.createElement('div');
+          card.classList.add('quote-card');
+          card.innerHTML = `
+  <div class="quote-status"></div>
+
+  <div class="quote-header">
+    <div class="user-avatar">${(quote.name || "A").charAt(0).toUpperCase()}</div>
+    <div>
+      <h3>${quote.name || 'Anonymous'}</h3>
+      <p class="submitted-date">🕒 ${quote.timestamp}</p>
+    </div>
+  </div>
+  <div class="quote-details">
+    <p><span>Email:</span> <a href="mailto:${quote.email}">${quote.email}</a></p>
+    <p><span>Phone:</span> ${quote.phone || 'N/A'}</p>
+    <p><span>Company:</span> ${quote.company || 'N/A'}</p>
+    <p><span>Service:</span> <span class="badge">${quote.service}</span></p>
+    <p class="project-details"><span>Details:</span><br>${quote.description}</p>
+    <button class="done-btn">✅ Mark as Done</button>
+  </div>
+`;
+
+          quoteList.appendChild(card);
+        });
+      });
+      function clearQuotes() {
+        if (confirm('Are you sure you want to clear all submissions?')) {
+          localStorage.removeItem('quotes');
+          location.reload();
+        }
+      }
+    </script>
+
+
+
+    <!------remaining-->
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class=" ">
+            <img src="assets/logo/logo7.png" alt="Zenvix Solutions Logo" style="height: 120px; vertical-align:middle;">
+            <!--<span class="">Zenvix Solutions</span>-->
+          </div>
+        </div>
+
+        <div class="developer-credit">
+          <p>
+            &copy; <span id="currentYear"></span> Zenvix Solutions. All rights reserved.
+            | Transforming Ideas into Digital Reality
+          </p>
+
+          <div class="footer-links " ">
+                    <p><a href=" terms.html" style="margin-right:18px;">Terms & Conditions</a></p><br>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+          </div>
+          <p>Developed with ❤️ by <a href="mailto:balakramtudu@gmail.com">Balakram Tudu</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script>
+      function showMobileMenu() {
+        document.querySelector('.nav-links').classList.add('active');
+        document.getElementById('close-nav').style.display = 'block';
+        document.getElementById('mobile-menu').style.display = 'none';
+      }
+
+      function hideMobileMenu() {
+        document.querySelector('.nav-links').classList.remove('active');
+        document.getElementById('close-nav').style.display = 'none';
+        document.getElementById('mobile-menu').style.display = 'flex';
+      }
+
+      // Hamburger click
+      document.getElementById('mobile-menu').addEventListener('click', showMobileMenu);
+
+      // Close button click
+      document.getElementById('close-nav').addEventListener('click', hideMobileMenu);
+
+      // Clicking on nav link (in mobile view)
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function () {
+          if (window.innerWidth <= 768) hideMobileMenu();
+        });
+      });
+
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Form submission handler
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        // Get form data
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData);
+
+        // Simulate form submission
+        alert(`Thank you ${data.name}! Your message has been sent. We'll get back to you soon!`);
+
+
+        // Reset form
+        event.target.reset();
+      }
+
+      // Add scroll effect to header
+      /*window.addEventListener('scroll', () => {
+          const header = document.querySelector('header');
+          if (window.scrollY > 100) {
+              header.style.background = 'rgba(102, 126, 234, 0.95)';
+              header.style.backdropFilter = 'blur(100px)';
+          } else {
+              header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+              header.style.backdropFilter = 'none';
+          }
+      });*/
+
+      // Animate service cards on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe service cards
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+      });
+
+      // Observe portfolio items
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(item);
+      });
+
+      // Add typing effect to hero title
+      function typeWriter(element, text, speed = 100) {
+        let i = 0;
+        element.innerHTML = '';
+
+        function type() {
+          if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          }
+        }
+
+        type();
+      }
+
+      // Initialize typing effect when page loads
+      window.addEventListener('load', () => {
+        const heroTitle = document.querySelector('.hero h1');
+        const originalText = heroTitle.textContent;
+        typeWriter(heroTitle, originalText, 80);
+      });
+    </script>
+
+    <script> const navLinks = document.querySelectorAll('.nav-links a');
+      const sections = Array.from(navLinks)
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean); // Remove null sections
+
+      window.addEventListener('scroll', () => {
+        let scrollPos = window.scrollY || document.documentElement.scrollTop;
+
+        let currentSection = sections[0];
+        sections.forEach(section => {
+          if (section.offsetTop <= scrollPos + 100) { // 100 is for header offset
+            currentSection = section;
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection.id}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+  <script src="script.js"></script>
+  <button id="backToTop" title="Back to top">
+    &#8679;
+  </button>
+  <script>
+    // Show button when scrolled down
+    window.addEventListener('scroll', function () {
+      const backToTopBtn = document.getElementById('backToTop');
+      if (window.scrollY > 200) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll to top when clicked
+    document.getElementById('backToTop').addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  </script>
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        content.classList.toggle('active');
+      });
+    });
+  </script>
+  <script>
+
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      return false;
+    });
+
+    document.addEventListener('keydown', function (e) {
+      // Block F12
+      if (e.key === 'F12' || e.keyCode === 123) {
+        e.preventDefault();
+        return false;
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      // Block F12
+      if (e.key === 'F12' || e.keyCode === 123) {
+        e.preventDefault();
+        return false;
+      }
+      // Block Ctrl+Shift+I/J/C/K and Ctrl+U (View Source)
+      if (
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C', 'K'].includes(e.key.toUpperCase())) ||
+        (e.ctrlKey && e.key.toUpperCase() === 'U')
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+  </script>
+  <script>// Attach event after rendering cards
+    setTimeout(() => {
+      document.querySelectorAll('.done-btn').forEach(button => {
+        button.addEventListener('click', function () {
+          const card = this.closest('.quote-card');
+          card.classList.add('done');
+          this.remove(); // optional: remove the button once clicked
+        });
+      });
+    }, 100);
+  </script>
+</body>
+
+
+
+</body>
+
+</html>
